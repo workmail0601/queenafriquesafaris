@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Queen Afrique Safaris</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="icon" type="image/png" href="/Assets/Favicons/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/Assets/Favicons/favicon.svg" />
+  <link rel="shortcut icon" href="/Assets/Favicons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/Assets/Favicons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Queen" />
+  <link rel="manifest" href="/Assets/Favicons/site.webmanifest" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            tealdeep: 'rgb(2,80,67)',
+            earthbrown: 'rgb(50,35,31)',
+            offwhite: '#f8f8f6'
+          },
+          fontFamily: {
+            heading: ['League Spartan', 'sans-serif'],
+            body: ['Montserrat', 'sans-serif'],
+            accent: ['Colonna MT', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+<style>
+
+  body {
+  top: 0 !important;
+  }
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @keyframes scroll {
+  0% {
+  transform: translateX(0);
+  }
+  100% {
+  transform: translateX(-50%);
+  }
+
+  }
+
+  .animate-scroll {
+  animation: scroll 60s linear infinite;
+  }
+
+  /* Google Translate Floating Button */
+  #google_translate_element {
+  background: white;
+  border: 1px solid #025043;
+  padding: 6px 10px;
+  border-radius: 9999px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+
+  /* Hide Google branding text */
+  .goog-te-gadget span {
+  display: none !important;
+  }
+
+  /* Dropdown select styling */
+  .goog-te-gadget select {
+  border: none;
+  background: transparent;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  color: #025043;
+  }
+
+  .goog-te-banner-frame.skiptranslate {
+  display: none !important;
+  }
+
+</style>
+</head>
+<body class="bg-offwhite text-earthbrown font-body">
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-offwhite/90 backdrop-blur-md border-b border-earthbrown/10">
+    <div class="max-w-7xl mx-auto px-8 py-6 flex items-center justify-between">
+
+      <!-- Brand -->
+        <a
+          href="/"
+          class="font-heading text-2xl tracking-tight text-earthbrown hover:opacity-80 transition"
+        >
+          Queen Afrique Safaris
+        </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-12 text-sm tracking-wider font-medium text-earthbrown">
+        <a href="/index.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">Home</a>
+        <a href="about.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">About Us</a>
+        <a href="packages.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">Packages</a>
+        <a href="blog.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">Blog</a>
+        <a href="contact.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">Contact</a>
+      </nav>
+
+      <!-- CTA + Mobile Toggle -->
+      <div class="flex items-center space-x-6">
+        <a href="https://wa.me/254718308032" class="hidden sm:inline-block border border-tealdeep px-6 py-3 text-xs tracking-widest uppercase hover:bg-tealdeep hover:text-white transition">
+          +254 718 308 032
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="menuToggle" class="md:hidden flex flex-col space-y-1.5 group">
+          <span class="w-6 h-px bg-earthbrown group-hover:bg-tealdeep transition"></span>
+          <span class="w-6 h-px bg-earthbrown group-hover:bg-tealdeep transition"></span>
+          <span class="w-6 h-px bg-earthbrown group-hover:bg-tealdeep transition"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed top-0 left-0 w-full h-screen bg-offwhite/95 backdrop-blur-md transform -translate-y-full opacity-0 transition-all duration-500 ease-in-out z-40">
+      
+      <!-- Close button -->
+      <button id="menuClose" class="absolute top-6 right-6 text-earthbrown text-2xl font-bold hover:text-tealdeep transition">&times;</button>
+      
+      <nav class="px-8 py-24 space-y-8 text-lg tracking-widest uppercase text-earthbrown flex flex-col items-center">
+        <a href="/index.html" class="hover:text-tealdeep transition">Home</a>
+        <a href="about.html" class="hover:text-tealdeep transition">About Us</a>
+        <a href="packages.html" class="hover:text-tealdeep transition">Packages</a>
+        <a href="blog.html" class="hover:text-tealdeep transition">Blog</a>
+        <a href="contact.html" class="hover:text-tealdeep transition">Contact</a>
+        <a href="https://wa.me/254718308032" class="mt-6 border border-tealdeep px-6 py-3 text-xs tracking-widest hover:bg-tealdeep hover:text-white transition">+254 718 308 032</a>
+      </nav>
+    </div>
+  </header>
+
+
+<!-- Contact Hero -->
+<section class="pt-40 pb-28">
+  <div class="max-w-4xl mx-auto px-8 text-center">
+    <h1 class="font-heading text-5xl md:text-6xl leading-tight mb-8 fade-up">
+      Let’s Begin the Conversation
+    </h1>
+    <p class="text-lg leading-relaxed text-earthbrown/80 fade-up" style="transition-delay:0.15s">
+      Tell us how you’d like to experience Africa - we’ll take care of the rest.
+    </p>
+  </div>
+</section>
+
+<!-- Contact Split -->
+<section class="pb-40">
+  <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-20 items-start">
+
+    <!-- Google Form -->
+    <div class="fade-up">
+      <h2 class="font-heading text-3xl mb-8">
+        Contact Form
+      </h2>
+
+      <p class="mb-8 text-earthbrown/80 leading-relaxed">
+        Share a few details about your travel plans. Our team will respond with a
+        thoughtfully curated proposal.
+      </p>
+
+      <div class="w-full h-[720px] border border-earthbrown/10 rounded-lg overflow-hidden bg-white">
+        <!-- Replace src with your Google Form embed link -->
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSf1uLxaVRLEdzIY1NyqNM8Z5g5phxyJj2OLERkEkb1ISyVYxw/viewform?embedded=true"
+          class="w-full h-full"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0">
+          Loading…
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Google Maps -->
+    <div class="fade-up" style="transition-delay:0.1s">
+      <h2 class="font-heading text-3xl mb-8">
+        Our Location
+      </h2>
+
+      <p class="mb-8 text-earthbrown/80 leading-relaxed">
+        Based in Kenya, we design journeys across East Africa and beyond -
+        rooted in local expertise and regional knowledge.
+      </p>
+
+      <div class="w-full h-[720px] border border-earthbrown/10 rounded-lg overflow-hidden">
+        <!-- Replace src with your Google Maps embed -->
+        <iframe
+          src="https://www.google.com/maps?q=Nairobi,Kenya&output=embed"
+          class="w-full h-full"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Editorial Closing -->
+<section class="pb-32">
+  <div class="max-w-4xl mx-auto px-8 text-center fade-up">
+    <p class="text-earthbrown/80 leading-relaxed">
+      <strong>Prefer a direct conversation?</strong> <br> You can also reach us by phone or WhatsApp, throught the icons below -
+      we’re always happy to talk through ideas.
+    </p>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="bg-earthbrown text-offwhite py-20">
+  <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-3 gap-16">
+
+    <!-- Brand -->
+    <div>
+      <div class="font-heading text-xl mb-4">
+        Queen Afrique Safaris
+      </div>
+      <p class="text-sm text-offwhite/80">
+        Curated African travel experiences.
+      </p>
+    </div>
+
+    <!-- Navigation -->
+    <div class="text-sm space-y-3">
+      <p class="hover:text-tealdeep transition cursor-pointer">Home</p>
+      <p class="hover:text-tealdeep transition cursor-pointer">About</p>
+      <p class="hover:text-tealdeep transition cursor-pointer">Packages</p>
+      <p class="hover:text-tealdeep transition cursor-pointer">Contact</p>
+    </div>
+
+    <!-- Social + Meta -->
+    <div class="space-y-6">
+      <div class="flex space-x-6">
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/queenafriquesafaris_ltd/" aria-label="Instagram"
+           class="group transition">
+          <svg class="w-5 h-5 fill-offwhite group-hover:fill-tealdeep transition"
+               viewBox="0 0 24 24">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5z"/>
+            <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"/>
+            <circle cx="17.5" cy="6.5" r="1"/>
+          </svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="linkedin.com/company/queenafriquesafaris/" aria-label="LinkedIn" class="group">
+          <svg class="w-5 h-5 fill-offwhite group-hover:fill-tealdeep transition"
+               viewBox="0 0 24 24">
+            <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1c.5-.9 1.8-1.8 3.7-1.8 4 0 4.7 2.6 4.7 6v6.1h-4v-5.4c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4V9z"/>
+          </svg>
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://web.facebook.com/queenafriquesafarisltd/" aria-label="Facebook" class="group">
+          <svg class="w-5 h-5 fill-offwhite group-hover:fill-tealdeep transition"
+               viewBox="0 0 24 24">
+            <path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.2V12h2.2l-.4 3h-1.8v7A10 10 0 0 0 22 12z"/>
+          </svg>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/254718308032" aria-label="WhatsApp" class="group">
+          <svg class="w-5 h-5 fill-offwhite group-hover:fill-tealdeep transition"
+               viewBox="0 0 24 24">
+            <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 1.5a8.5 8.5 0 0 1 0 17 8.4 8.4 0 0 1-4.3-1.2l-.3-.2-3 1 .9-3-.2-.3A8.5 8.5 0 0 1 12 3.5zm4.7 11.8c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 .9-.2 0-.4 0-.7-.2-.3-.2-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.5.1-.7l.4-.5.2-.4c.1-.2 0-.4 0-.6 0-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1-1.1 2.4 0 1.4 1.1 2.8 1.2 3 .2.2 2.2 3.3 5.4 4.6.7.3 1.3.5 1.8.6.8.2 1.5.2 2.1.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.4z"/>
+          </svg>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:queenafriquesafaris@gmail.com"    onclick="window.location.href='mailto:queenafriquesafaris@gmail.com'"
+          aria-label="Email" class="group">
+          <svg class="w-5 h-5 fill-offwhite group-hover:fill-tealdeep transition"
+               viewBox="0 0 24 24">
+            <path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6zm2 .5V7l8 5 8-5v-.5H4zm16 2.6-7.4 4.6a1 1 0 0 1-1.2 0L4 9.1V18h16V9.1z"/>
+          </svg>
+        </a>
+
+        <!-- Twitter / X -->
+        <a href="https://x.com/Queenafriqueltd" aria-label="Twitter" class="group">
+          <svg class="w-5 h-5 fill-offwhite group-hover:fill-tealdeep transition"
+               viewBox="0 0 24 24">
+            <path d="M18.2 2H21l-6.3 7.2L22 22h-6.8l-4.7-6.2L4.7 22H2l6.7-7.7L2 2h6.9l4.2 5.7L18.2 2z"/>
+          </svg>
+        </a>
+
+      </div>
+
+      <p class="text-sm text-offwhite/70">
+        hello@queenafriquesafaris.com <br><br>
+
+        © 2026 Queen Afrique Safaris
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Floating Google Translate Button -->
+<div
+  id="google_translate_element"
+  class="fixed bottom-10 left-10 z-50"
+></div>
+
+<!-- BACK TO TOP -->
+<button
+  id="backToTop"
+  aria-label="Back to top"
+  class="hidden fixed bottom-8 right-8 z-40
+         h-12 w-12 rounded-full
+         bg-white/80 backdrop-blur
+         border border-black/10
+         flex items-center justify-center
+         transition-all duration-300
+         hover:border-tealdeep hover:bg-tealdeep
+         group">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-4 w-4 text-earthbrown transition-all duration-300
+           group-hover:text-white group-hover:-translate-y-0.5"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+  </svg>
+</button>
+
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible')
+      })
+    }, { threshold: 0.15 })
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el))
+
+      const backToTop = document.getElementById('backToTop')
+
+  window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('hidden', window.scrollY < 600)
+  })
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  })
+  const menuToggle = document.getElementById('menuToggle');
+  const menuClose = document.getElementById('menuClose');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  function toggleMenu() {
+    mobileMenu.classList.toggle('-translate-y-full');
+    mobileMenu.classList.toggle('opacity-0');
+    mobileMenu.classList.toggle('opacity-100');
+  }
+
+  // Open/close with hamburger
+  menuToggle.addEventListener('click', toggleMenu);
+
+  // Close with the X button
+  menuClose.addEventListener('click', toggleMenu);
+
+  // Optional: Close when clicking a link
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', toggleMenu);
+  });
+
+    function googleTranslateElementInit() {
+   new google.translate.TranslateElement(
+  {
+    pageLanguage: 'en',
+    includedLanguages: 'en,fr,es,de,it,pt,ru,ar,zh-CN,zh-TW,ja,ko,hi,sw,tr,nl,pl,th,vi,id',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  },
+  'google_translate_element'
+
+    );
+  }
+
+  </script>
+
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
