@@ -98,6 +98,21 @@
   display: none !important;
   }
 
+  /* Ensure images stay proportionate and don't overflow their containers */
+  img {
+    width: 100%;           /* Fill container width */
+    height: auto;          /* Maintain aspect ratio */
+    object-fit: cover;     /* Crop nicely when container has fixed height */
+    max-width: 100%;       /* Never exceed container width */
+    display: block;        /* Remove inline spacing issues */
+  }
+
+  /* Optional: limit image height for editorial previews */
+  .blog-preview img {
+    max-height: 400px;     /* Adjust as needed for visual consistency */
+    object-fit: cover;     /* Crop excess, preserve focus */
+  }
+
 </style>
 </head>
 <body class="bg-offwhite text-earthbrown font-body">
@@ -160,7 +175,7 @@
 
   <!-- Hero Section -->
   <section class="h-screen flex items-center justify-center relative pt-24">
-    <img src="Assets/elephant1.jpg" class="absolute inset-0 w-full h-full object-cover" />
+    <img src="Assets/home/elephant1.webp" class="absolute inset-0 w-full h-full object-cover" />
     <div class="absolute inset-0 bg-black/50"></div>
 
     <div class="relative max-w-4xl text-center text-white px-6">
@@ -181,10 +196,12 @@
       <div class="fade-up">
         <h2 class="font-heading text-4xl mb-8">About Queen Afrique</h2>
         <p class="mb-6">We design journeys rooted in respect for land, culture, and time.</p>
-        <p class="mb-10">Each safari is curated with intention - unhurried, immersive, and deeply human.</p>
+        <p class="mb-10">Queen Afrique Safaris is a premier eco-conscious travel company specialized in creating transformative safari experiences throughout Kenya, across the African continent, and beyond. We bridge the gap between luxury adventure and environmental responsibility, crafting bespoke journeys that honor Africa's extraordinary wildlife, diverse landscapes, and vibrant cultures while ensuring every traveler leaves a lasting, positive footprint.
+
+Our commitment goes beyond traditional tourism; we are a movement dedicated to the preservation of the natural world for generations to come.</p>
         <a href="#" class="underline tracking-wide">Learn More</a>
       </div>
-      <img src="Assets/masai1.jpg" class="fade-up" />
+      <img src="Assets/home/masai1.webp" class="fade-up" />
     </div>
   </section>
 
@@ -337,33 +354,33 @@
       <!-- Individual / Couple -->
       <div class="fade-up mt-0">
         <div class="h-80 overflow-hidden mb-6 rounded-lg">
-          <img src="Assets/elephant1.jpg"
+          <img src="Assets/home/wildlife.webp"
                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
         </div>
-        <h3 class="font-heading text-2xl mb-4">Individual & Couple Safaris</h3>
-        <p class="mb-6 text-sm">Tailored, private journeys designed for depth, intimacy, and personal exploration.</p>
+        <h3 class="font-heading text-2xl mb-4">Sustainable Wildlife Safaris</h3>
+        <p class="mb-6 text-sm">Discover Africa's iconic "Big Five" through responsible game drives and guided expeditions that prioritize animal welfare and habitat conservation.</p>
         <a href="pages/packages.html" class="inline-block px-6 py-3 border border-tealdeep text-tealdeep hover:bg-tealdeep hover:text-white transition">Learn More</a>
       </div>
 
       <!-- Group -->
       <div class="fade-up mt-12">
         <div class="h-80 overflow-hidden mb-6 rounded-lg">
-          <img src="Assets/elephant1.jpg"
+          <img src="Assets/home/beach.webp"
                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
         </div>
-        <h3 class="font-heading text-2xl mb-4">Group Safaris</h3>
-        <p class="mb-6 text-sm">Shared adventures with friends, family, or organized groups — curated for collective wonder.</p>
+        <h3 class="font-heading text-2xl mb-4">Eco Beach & Bush Tours</h3>
+        <p class="mb-6 text-sm">Experience the perfect blend of Kenya’s stunning coastal marine parks and rugged inland wilderness reserves through curated, low-impact adventures.</p>
         <a href="pages/packages.html" class="inline-block px-6 py-3 border border-tealdeep text-tealdeep hover:bg-tealdeep hover:text-white transition">Learn More</a>
       </div>
 
       <!-- Day Trips -->
       <div class="fade-up mt-24">
         <div class="h-80 overflow-hidden mb-6 rounded-lg">
-          <img src="Assets/elephant1.jpg"
+          <img src="Assets/home/community.webp"
                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
         </div>
-        <h3 class="font-heading text-2xl mb-4">Day Trips</h3>
-        <p class="mb-6 text-sm">Carefully planned one-day experiences for an immersive taste of Africa’s beauty.</p>
+        <h3 class="font-heading text-2xl mb-4">Cultural Heritage Experiences</h3>
+        <p class="mb-6 text-sm">Immerse yourself in the rich traditions of Africa’s diverse communities through authentic engagements that honor heritage and provide sustainable livelihoods.</p>
         <a href="pages/packages.html" class="inline-block px-6 py-3 border border-tealdeep text-tealdeep hover:bg-tealdeep hover:text-white transition">Learn More</a>
       </div>
 
@@ -386,7 +403,7 @@
       <!-- ITEM 1 -->
       <div class="min-w-[280px] group flex flex-col">
         <div class="h-64 overflow-hidden mb-6">
-          <img src="Assets/elephant1.jpg"
+          <img src="Assets/home/masaimara.webp"
                class="w-full h-full object-cover transform transition-transform duration-500 ease-out group-hover:scale-105" />
         </div>
         <div class="flex justify-between items-start">
@@ -405,7 +422,7 @@
       <!-- ITEM 2 -->
       <div class="min-w-[280px] group flex flex-col">
         <div class="h-64 overflow-hidden mb-6">
-          <img src="Assets/elephant1.jpg"
+          <img src="Assets/home/serengeti.webp"
                class="w-full h-full object-cover transform transition-transform duration-500 ease-out group-hover:scale-105" />
         </div>
         <div class="flex justify-between items-start">
@@ -424,7 +441,7 @@
       <!-- ITEM 3 -->
       <div class="min-w-[280px] group flex flex-col">
         <div class="h-64 overflow-hidden mb-6">
-          <img src="Assets/elephant1.jpg"
+          <img src="Assets/home/okavango.webp"
                class="w-full h-full object-cover transform transition-transform duration-500 ease-out group-hover:scale-105" />
         </div>
         <div class="flex justify-between items-start">
@@ -441,9 +458,12 @@
       </div>
 
       <!-- DUPLICATE ITEMS (for seamless infinite scroll) -->
+
+
+            <!-- ITEM 1 -->
       <div class="min-w-[280px] group flex flex-col">
         <div class="h-64 overflow-hidden mb-6">
-          <img src="Assets/elephant1.jpg"
+          <img src="Assets/home/masaimara.webp"
                class="w-full h-full object-cover transform transition-transform duration-500 ease-out group-hover:scale-105" />
         </div>
         <div class="flex justify-between items-start">
@@ -459,9 +479,10 @@
         </div>
       </div>
 
+      <!-- ITEM 2 -->
       <div class="min-w-[280px] group flex flex-col">
         <div class="h-64 overflow-hidden mb-6">
-          <img src="Assets/elephant1.jpg"
+          <img src="Assets/home/serengeti.webp"
                class="w-full h-full object-cover transform transition-transform duration-500 ease-out group-hover:scale-105" />
         </div>
         <div class="flex justify-between items-start">
@@ -477,9 +498,10 @@
         </div>
       </div>
 
+      <!-- ITEM 3 -->
       <div class="min-w-[280px] group flex flex-col">
         <div class="h-64 overflow-hidden mb-6">
-          <img src="Assets/elephant1.jpg"
+          <img src="Assets/home/okavango.webp"
                class="w-full h-full object-cover transform transition-transform duration-500 ease-out group-hover:scale-105" />
         </div>
         <div class="flex justify-between items-start">
@@ -495,6 +517,7 @@
         </div>
       </div>
 
+
     </div>
   </div>
 </section>
@@ -508,59 +531,139 @@
 
     <div class="grid md:grid-cols-3 gap-16 text-left">
       
-      <div class="fade-up">
-        <div class="h-14 w-14 rounded-full mb-6 bg-offwhite/10"></div>
-        <p class="mb-4 text-offwhite/90 leading-relaxed">
-          Everything felt calm, intentional, and deeply considered.
-        </p>
-        <div class="text-sm tracking-wide text-offwhite/70">
-          Sarah M · ★★★★★
-        </div>
-      </div>
+<div class="fade-up">
+  <!-- Avatar -->
+  <div class="h-14 w-14 rounded-full mb-6 overflow-hidden bg-offwhite/10 flex items-center justify-center">
+    <img
+      src="Assets/home/woman.png"
+      alt="Client portrait"
+      class="h-full w-full object-cover"
+      loading="lazy"
+      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+    />
+    <svg
+      class="hidden h-6 w-6 text-offwhite/60"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.5"
+      viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M12 14a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 0v6m-2 0h4"/>
+    </svg>
+  </div>
 
-      <div class="fade-up" style="transition-delay:0.15s">
-        <div class="h-14 w-14 rounded-full mb-6 bg-offwhite/10"></div>
-        <p class="mb-4 text-offwhite/90 leading-relaxed">
-          A safari that respected land, people, and time.
-        </p>
-        <div class="text-sm tracking-wide text-offwhite/70">
-          David K · ★★★★★
-        </div>
-      </div>
+  <p class="mb-4 text-offwhite/90 leading-relaxed">
+    Everything felt calm, intentional, and deeply considered.
+  </p>
 
-      <div class="fade-up" style="transition-delay:0.3s">
-        <div class="h-14 w-14 rounded-full mb-6 bg-offwhite/10"></div>
-        <p class="mb-4 text-offwhite/90 leading-relaxed">
-          Nothing rushed. Everything felt meaningful.
-        </p>
-        <div class="text-sm tracking-wide text-offwhite/70">
-          Amelia R · ★★★★☆
-        </div>
-      </div>
+  <div class="text-sm tracking-wide text-offwhite/70">
+    Sarah M · ★★★★★
+  </div>
+</div>
+
+
+<div class="fade-up" style="transition-delay:0.15s">
+  <!-- Avatar -->
+  <div class="h-14 w-14 rounded-full mb-6 overflow-hidden bg-offwhite/10 flex items-center justify-center">
+    <img
+      src="Assets/home/man.png"
+      alt="Client portrait"
+      class="h-full w-full object-cover"
+      loading="lazy"
+      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+    />
+    <svg
+      class="hidden h-6 w-6 text-offwhite/60"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.5"
+      viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M12 14a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 0v6m-2 0h4"/>
+    </svg>
+  </div>
+
+  <p class="mb-4 text-offwhite/90 leading-relaxed">
+    A safari that respected land, people, and time.
+  </p>
+
+  <div class="text-sm tracking-wide text-offwhite/70">
+    David K · ★★★★★
+  </div>
+</div>
+
+
+<div class="fade-up" style="transition-delay:0.3s">
+  <!-- Avatar -->
+  <div class="h-14 w-14 rounded-full mb-6 overflow-hidden bg-offwhite/10 flex items-center justify-center">
+    <img
+      src="Assets/home/woman.png"
+      alt="Client portrait"
+      class="h-full w-full object-cover"
+      loading="lazy"
+      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+    />
+    <svg
+      class="hidden h-6 w-6 text-offwhite/60"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.5"
+      viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M12 14a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 0v6m-2 0h4"/>
+    </svg>
+  </div>
+
+  <p class="mb-4 text-offwhite/90 leading-relaxed">
+    Nothing rushed. Everything felt meaningful.
+  </p>
+
+  <div class="text-sm tracking-wide text-offwhite/70">
+    Amelia R · ★★★★☆
+  </div>
+</div>
+
 
     </div>
   </div>
 </section>
 
-  <!-- Blog Preview -->
-  <section class="py-32">
-    <div class="max-w-7xl mx-auto px-8">
-      <h2 class="font-heading text-4xl mb-20 fade-up">From the Journal</h2>
-      <div class="grid md:grid-cols-3 gap-16">
-        <div class="fade-up">
-          <img src="Assets/elephant1.jpg" class="mb-6" />
-          <h4 class="font-heading text-xl">The Art of Slow Safari</h4>
+<section class="py-32">
+  <div class="max-w-7xl mx-auto px-8">
+    <h2 class="font-heading text-4xl mb-20 fade-up">From the Journal</h2>
+    
+    <div class="grid md:grid-cols-3 gap-16 mb-20">
+      <div class="fade-up">
+        <div class="aspect-[4/3] mb-6 overflow-hidden">
+          <img src="Assets/home/tourvan1.webp" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
         </div>
-        <div class="fade-up" style="transition-delay:0.2s">
-          <img src="Assets/elephant1.jpg" class="mb-6" />
-          <h4 class="font-heading text-xl">Designing Meaningful Travel</h4>
+        <h4 class="font-heading text-xl">The Art of Slow Safari</h4>
+      </div>
+
+      <div class="fade-up" style="transition-delay:0.2s">
+        <div class="aspect-[4/3] mb-6 overflow-hidden">
+          <img src="Assets/home/tourvan2.webp" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
         </div>
-        <div class="fade-up" style="transition-delay:0.4s">
-          <img src="Assets/elephant1.jpg" class="mb-6" />
-          <h4 class="font-heading text-xl">Land, Light & Silence</h4>
+        <h4 class="font-heading text-xl">Designing Meaningful Travel</h4>
+      </div>
+
+      <div class="fade-up" style="transition-delay:0.4s">
+        <div class="aspect-[4/3] mb-6 overflow-hidden">
+          <img src="Assets/home/hikers.webp" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
         </div>
+        <h4 class="font-heading text-xl">Land, Light & Silence</h4>
       </div>
     </div>
+
+    <div class="fade-up text-center">
+      <a href="pages/blog.html"
+         class="inline-block bg-tealdeep hover:bg-[#5D4037] text-white font-heading tracking-widest uppercase text-xs px-10 py-4 transition-colors duration-300">
+        Visit Our Blog
+      </a>
+    </div>
+  </div>
+</section>
+
   </section>
 
 <!-- Footer -->
