@@ -1,0 +1,5 @@
+# Redirect the Netlify default subdomain to your custom domain
+https://endearing-creponne-62e3bc.netlify.app/* https://queenafriquesafaris.com/:splat  301!
+
+# Ensure non-www traffic stays on the main domain (or vice versa)
+http://queenafriquesafaris.com/* https://queenafriquesafaris.com/:splat  301!
