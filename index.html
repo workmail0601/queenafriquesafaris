@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Queen Afrique Safaris</title>
-  <link rel="canonical" href="https://queenafriquesafaris.com/" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -130,104 +129,44 @@
           Queen Afrique Safaris
         </a>
 
-    <!-- Desktop Navigation -->
-    <nav class="hidden md:flex items-center space-x-12 text-sm tracking-wider font-medium text-earthbrown">
 
-      <a href="/" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">
-        Home
-      </a>
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-12 text-sm tracking-wider font-medium text-earthbrown">
+        <a href="index.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">Home</a>
+        <a href="pages/about.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">About Us</a>
+        <a href="pages/packages.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">Packages</a>
+        <a href="pages/blog.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">Blog</a>
+        <a href="pages/contact.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">Contact</a>
+      </nav>
 
-      <!-- About Dropdown -->
-      <div class="relative group">
-
-        <button class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep group-hover:after:w-full after:transition-all">
-          About
-        </button>
-
-        <div class="absolute top-full left-0 mt-4 w-56 bg-offwhite shadow-lg border border-earthbrown/10
-                    opacity-0 invisible translate-y-2
-                    group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
-                    transition-all duration-300 ease-out z-50">
-
-          <div class="flex flex-col py-4 text-sm tracking-wide text-earthbrown">
-            <a href="pages/about.html" class="px-6 py-2 hover:bg-earthbrown/5 transition">
-              About Us
-            </a>
-            <a href="pages/sports.html" class="px-6 py-2 hover:bg-earthbrown/5 transition">
-              Sports Tourism
-            </a>
-            <a href="#" class="px-6 py-2 hover:bg-earthbrown/5 transition">
-              CSR
-            </a>
-          </div>
-
-        </div>
-      </div>
-
-      <a href="/pages/packages.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">
-        Packages
-      </a>
-
-      <a href="pages/blog.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">
-        Blog
-      </a>
-
-      <a href="pages/contact.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">
-        Contact
-      </a>
-
-    </nav>
-
-
-    <!-- CTA + Mobile Toggle -->
-    <div class="flex items-center space-x-6">
-
-      <a href="https://wa.me/254718308032" class="hidden sm:inline-block border border-tealdeep px-6 py-3 text-xs tracking-widest uppercase hover:bg-tealdeep hover:text-white transition">
-        +254 718 308 032
-      </a>
-
-      <button id="menuToggle" class="md:hidden flex flex-col space-y-1.5 group">
-        <span class="w-6 h-px bg-earthbrown group-hover:bg-tealdeep transition"></span>
-        <span class="w-6 h-px bg-earthbrown group-hover:bg-tealdeep transition"></span>
-        <span class="w-6 h-px bg-earthbrown group-hover:bg-tealdeep transition"></span>
-      </button>
-
-    </div>
-    </div>
-
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="fixed top-0 left-0 w-full h-screen bg-offwhite/95 backdrop-blur-md transform -translate-y-full opacity-0 transition-all duration-500 ease-in-out z-40">
-
-      <button id="menuClose" class="absolute top-6 right-6 text-earthbrown text-2xl font-bold hover:text-tealdeep transition">
-        &times;
-      </button>
-
-      <nav class="px-8 py-24 space-y-8 text-lg tracking-widest uppercase text-earthbrown flex flex-col items-center">
-
-        <a href="/" class="hover:text-tealdeep transition">Home</a>
-
-        <!-- Mobile About Dropdown -->
-        <div class="flex flex-col items-center">
-          <button id="mobileAboutToggle" class="hover:text-tealdeep transition">
-            ABOUT
-          </button>
-
-          <div id="mobileAboutMenu" class="hidden flex flex-col mt-4 space-y-4 text-sm tracking-wide normal-case">
-            <a href="/pages/about.html" class="hover:text-tealdeep transition">About Us</a>
-            <a href="/pages/sports.html" class="hover:text-tealdeep transition">Sports Tourism</a>
-            <a href="#" class="hover:text-tealdeep transition">CSR</a>
-          </div>
-        </div>
-
-        <a href="/pages/packages.html" class="hover:text-tealdeep transition">Packages</a>
-        <a href="pages/blog.html" class="hover:text-tealdeep transition">Blog</a>
-        <a href="pages/contact.html" class="hover:text-tealdeep transition">Contact</a>
-
-        <a href="https://wa.me/254718308032" class="mt-6 border border-tealdeep px-6 py-3 text-xs tracking-widest hover:bg-tealdeep hover:text-white transition">
+      <!-- CTA + Mobile Toggle -->
+      <div class="flex items-center space-x-6">
+        <a href="https://wa.me/254718308032" class="hidden sm:inline-block border border-tealdeep px-6 py-3 text-xs tracking-widest uppercase hover:bg-tealdeep hover:text-white transition">
           +254 718 308 032
         </a>
 
+        <!-- Mobile Menu Button -->
+        <button id="menuToggle" class="md:hidden flex flex-col space-y-1.5 group">
+          <span class="w-6 h-px bg-earthbrown group-hover:bg-tealdeep transition"></span>
+          <span class="w-6 h-px bg-earthbrown group-hover:bg-tealdeep transition"></span>
+          <span class="w-6 h-px bg-earthbrown group-hover:bg-tealdeep transition"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed top-0 left-0 w-full h-screen bg-offwhite/95 backdrop-blur-md transform -translate-y-full opacity-0 transition-all duration-500 ease-in-out z-40">
+      
+      <!-- Close button -->
+      <button id="menuClose" class="absolute top-6 right-6 text-earthbrown text-2xl font-bold hover:text-tealdeep transition">&times;</button>
+      
+      <nav class="px-8 py-24 space-y-8 text-lg tracking-widest uppercase text-earthbrown flex flex-col items-center">
+        <a href="index.html" class="hover:text-tealdeep transition">Home</a>
+        <a href="pages/about.html" class="hover:text-tealdeep transition">About Us</a>
+        <a href="pages/packages.html" class="hover:text-tealdeep transition">Packages</a>
+        <a href="pages/blog.html" class="hover:text-tealdeep transition">Blog</a>
+        <a href="pages/contact.html" class="hover:text-tealdeep transition">Contact</a>
+        <a href="https://wa.me/254718308032" class="mt-6 border border-tealdeep px-6 py-3 text-xs tracking-widest hover:bg-tealdeep hover:text-white transition">+254 718 308 032</a>
       </nav>
     </div>
   </header>
@@ -245,7 +184,7 @@
         Your gateway to unforgettable adventures
       </p>
       <div class="mt-14 flex justify-center space-x-8 fade-up" style="transition-delay:0.4s">
-        <a href="/pages/packages.html" class="bg-tealdeep px-8 py-4 text-sm tracking-wide hover:bg-opacity-90 transition">Explore Destinations</a>
+        <a href="pages/packages.html" class="bg-tealdeep px-8 py-4 text-sm tracking-wide hover:bg-opacity-90 transition">Explore Destinations</a>
         <a href="pages/contact.html" class="border border-white px-8 py-4 text-sm tracking-wide hover:bg-white hover:text-earthbrown transition">Plan Your Safari</a>
       </div>
     </div>
@@ -420,7 +359,7 @@ Our commitment goes beyond traditional tourism; we are a movement dedicated to t
         </div>
         <h3 class="font-heading text-2xl mb-4">Sustainable Wildlife Safaris</h3>
         <p class="mb-6 text-sm">Discover Africa's iconic "Big Five" through responsible game drives and guided expeditions that prioritize animal welfare and habitat conservation.</p>
-        <a href="/pages/packages.html" class="inline-block px-6 py-3 border border-tealdeep text-tealdeep hover:bg-tealdeep hover:text-white transition">Learn More</a>
+        <a href="pages/packages.html" class="inline-block px-6 py-3 border border-tealdeep text-tealdeep hover:bg-tealdeep hover:text-white transition">Learn More</a>
       </div>
 
       <!-- Group -->
@@ -431,7 +370,7 @@ Our commitment goes beyond traditional tourism; we are a movement dedicated to t
         </div>
         <h3 class="font-heading text-2xl mb-4">Eco Beach & Bush Tours</h3>
         <p class="mb-6 text-sm">Experience the perfect blend of Kenya’s stunning coastal marine parks and rugged inland wilderness reserves through curated, low-impact adventures.</p>
-        <a href="/pages/packages.html" class="inline-block px-6 py-3 border border-tealdeep text-tealdeep hover:bg-tealdeep hover:text-white transition">Learn More</a>
+        <a href="pages/packages.html" class="inline-block px-6 py-3 border border-tealdeep text-tealdeep hover:bg-tealdeep hover:text-white transition">Learn More</a>
       </div>
 
       <!-- Day Trips -->
@@ -442,7 +381,7 @@ Our commitment goes beyond traditional tourism; we are a movement dedicated to t
         </div>
         <h3 class="font-heading text-2xl mb-4">Cultural Heritage Experiences</h3>
         <p class="mb-6 text-sm">Immerse yourself in the rich traditions of Africa’s diverse communities through authentic engagements that honor heritage and provide sustainable livelihoods.</p>
-        <a href="/pages/packages.html" class="inline-block px-6 py-3 border border-tealdeep text-tealdeep hover:bg-tealdeep hover:text-white transition">Learn More</a>
+        <a href="pages/packages.html" class="inline-block px-6 py-3 border border-tealdeep text-tealdeep hover:bg-tealdeep hover:text-white transition">Learn More</a>
       </div>
 
     </div>
@@ -473,7 +412,7 @@ Our commitment goes beyond traditional tourism; we are a movement dedicated to t
             <p class="text-sm">Endless plains and iconic wildlife.</p>
             <p class="text-sm font-medium mt-1">From $1,200 / person</p>
           </div>
-          <a href="/pages/packages.html"
+          <a href="pages/packages.html"
              class="bg-tealdeep text-white px-4 py-2 text-xs uppercase tracking-wider rounded hover:bg-tealdeep/90 transition">
             Book Now
           </a>
@@ -483,16 +422,16 @@ Our commitment goes beyond traditional tourism; we are a movement dedicated to t
       <!-- ITEM 2 -->
       <div class="min-w-[280px] group flex flex-col">
         <div class="h-64 overflow-hidden mb-6">
-          <img src="Assets/home/serengeti.webp"
+          <img src="Assets/home/tz.webp"
                class="w-full h-full object-cover transform transition-transform duration-500 ease-out group-hover:scale-105" />
         </div>
         <div class="flex justify-between items-start">
           <div>
             <h4 class="font-heading text-lg">Serengeti</h4>
             <p class="text-sm">The rhythm of the great migration.</p>
-            <p class="text-sm font-medium mt-1">From $1,500 / person</p>
+            <p class="text-sm font-medium mt-1">From Kes 24,000 / person</p>
           </div>
-          <a href="/pages/packages.html"
+          <a href="pages/packages.html"
              class="bg-tealdeep text-white px-4 py-2 text-xs uppercase tracking-wider rounded hover:bg-tealdeep/90 transition">
             Book Now
           </a>
@@ -502,16 +441,75 @@ Our commitment goes beyond traditional tourism; we are a movement dedicated to t
       <!-- ITEM 3 -->
       <div class="min-w-[280px] group flex flex-col">
         <div class="h-64 overflow-hidden mb-6">
-          <img src="Assets/home/okavango.webp"
+          <img src="Assets/home/mtkenya.webp"
                class="w-full h-full object-cover transform transition-transform duration-500 ease-out group-hover:scale-105" />
         </div>
         <div class="flex justify-between items-start">
           <div>
-            <h4 class="font-heading text-lg">Okavango Delta</h4>
-            <p class="text-sm">Water, wildlife, silence.</p>
-            <p class="text-sm font-medium mt-1">From $1,400 / person</p>
+            <h4 class="font-heading text-lg">Mt. Kenya</h4>
+            <p class="text-sm">Mountains, wildlife, silence.</p>
+            <p class="text-sm font-medium mt-1">From Kes 41,000 / person</p>
           </div>
-          <a href="/pages/packages.html"
+          <a href="pages/packages.html"
+             class="bg-tealdeep text-white px-4 py-2 text-xs uppercase tracking-wider rounded hover:bg-tealdeep/90 transition">
+            Book Now
+          </a>
+        </div>
+      </div>
+
+
+          <!-- ITEM 3 -->
+      <div class="min-w-[280px] group flex flex-col">
+        <div class="h-64 overflow-hidden mb-6">
+          <img src="Assets/home/diani.webp"
+               class="w-full h-full object-cover transform transition-transform duration-500 ease-out group-hover:scale-105" />
+        </div>
+        <div class="flex justify-between items-start">
+          <div>
+            <h4 class="font-heading text-lg">Diani</h4>
+            <p class="text-sm">Sun, and Soft White Sands</p>
+            <p class="text-sm font-medium mt-1">From Kes 34,500 / person</p>
+          </div>
+          <a href="pages/packages.html"
+             class="bg-tealdeep text-white px-4 py-2 text-xs uppercase tracking-wider rounded hover:bg-tealdeep/90 transition">
+            Book Now
+          </a>
+        </div>
+      </div>
+
+      <!-- ITEM 4 -->
+      <div class="min-w-[280px] group flex flex-col">
+        <div class="h-64 overflow-hidden mb-6">
+          <img src="Assets/home/watamu.webp"
+               class="w-full h-full object-cover transform transition-transform duration-500 ease-out group-hover:scale-105" />
+        </div>
+        <div class="flex justify-between items-start">
+          <div>
+            <h4 class="font-heading text-lg">Watamu</h4>
+            <p class="text-sm">Sun Kissed Beaches and Vibrant corals.</p>
+            <p class="text-sm font-medium mt-1">From Kes 30,000 / person</p>
+          </div>
+          <a href="pages/packages.html"
+             class="bg-tealdeep text-white px-4 py-2 text-xs uppercase tracking-wider rounded hover:bg-tealdeep/90 transition">
+            Book Now
+          </a>
+        </div>
+      </div>
+
+
+      <!-- ITEM 5 -->
+      <div class="min-w-[280px] group flex flex-col">
+        <div class="h-64 overflow-hidden mb-6">
+          <img src="Assets/home/japan.webp"
+               class="w-full h-full object-cover transform transition-transform duration-500 ease-out group-hover:scale-105" />
+        </div>
+        <div class="flex justify-between items-start">
+          <div>
+            <h4 class="font-heading text-lg">Japan</h4>
+            <p class="text-sm">Tradition, Culture, Art.</p>
+            <p class="text-sm font-medium mt-1">From $2,000 / person</p>
+          </div>
+          <a href="pages/packages.html"
              class="bg-tealdeep text-white px-4 py-2 text-xs uppercase tracking-wider rounded hover:bg-tealdeep/90 transition">
             Book Now
           </a>
@@ -519,9 +517,7 @@ Our commitment goes beyond traditional tourism; we are a movement dedicated to t
       </div>
 
       <!-- DUPLICATE ITEMS (for seamless infinite scroll) -->
-
-
-            <!-- ITEM 1 -->
+      <!-- ITEM 1 -->
       <div class="min-w-[280px] group flex flex-col">
         <div class="h-64 overflow-hidden mb-6">
           <img src="Assets/home/masaimara.webp"
@@ -533,7 +529,7 @@ Our commitment goes beyond traditional tourism; we are a movement dedicated to t
             <p class="text-sm">Endless plains and iconic wildlife.</p>
             <p class="text-sm font-medium mt-1">From $1,200 / person</p>
           </div>
-          <a href="/pages/packages.html"
+          <a href="pages/packages.html"
              class="bg-tealdeep text-white px-4 py-2 text-xs uppercase tracking-wider rounded hover:bg-tealdeep/90 transition">
             Book Now
           </a>
@@ -543,16 +539,16 @@ Our commitment goes beyond traditional tourism; we are a movement dedicated to t
       <!-- ITEM 2 -->
       <div class="min-w-[280px] group flex flex-col">
         <div class="h-64 overflow-hidden mb-6">
-          <img src="Assets/home/serengeti.webp"
+          <img src="Assets/home/tz.webp"
                class="w-full h-full object-cover transform transition-transform duration-500 ease-out group-hover:scale-105" />
         </div>
         <div class="flex justify-between items-start">
           <div>
             <h4 class="font-heading text-lg">Serengeti</h4>
             <p class="text-sm">The rhythm of the great migration.</p>
-            <p class="text-sm font-medium mt-1">From $1,500 / person</p>
+            <p class="text-sm font-medium mt-1">From Kes 24,000 / person</p>
           </div>
-          <a href="/pages/packages.html"
+          <a href="pages/packages.html"
              class="bg-tealdeep text-white px-4 py-2 text-xs uppercase tracking-wider rounded hover:bg-tealdeep/90 transition">
             Book Now
           </a>
@@ -562,22 +558,80 @@ Our commitment goes beyond traditional tourism; we are a movement dedicated to t
       <!-- ITEM 3 -->
       <div class="min-w-[280px] group flex flex-col">
         <div class="h-64 overflow-hidden mb-6">
-          <img src="Assets/home/okavango.webp"
+          <img src="Assets/home/mtkenya.webp"
                class="w-full h-full object-cover transform transition-transform duration-500 ease-out group-hover:scale-105" />
         </div>
         <div class="flex justify-between items-start">
           <div>
-            <h4 class="font-heading text-lg">Okavango Delta</h4>
-            <p class="text-sm">Water, wildlife, silence.</p>
-            <p class="text-sm font-medium mt-1">From $1,400 / person</p>
+            <h4 class="font-heading text-lg">Mt. Kenya</h4>
+            <p class="text-sm">Mountains, wildlife, silence.</p>
+            <p class="text-sm font-medium mt-1">From Kes 41,000 / person</p>
           </div>
-          <a href="/pages/packages.html"
+          <a href="pages/packages.html"
              class="bg-tealdeep text-white px-4 py-2 text-xs uppercase tracking-wider rounded hover:bg-tealdeep/90 transition">
             Book Now
           </a>
         </div>
       </div>
 
+
+          <!-- ITEM 3 -->
+      <div class="min-w-[280px] group flex flex-col">
+        <div class="h-64 overflow-hidden mb-6">
+          <img src="Assets/home/diani.webp"
+               class="w-full h-full object-cover transform transition-transform duration-500 ease-out group-hover:scale-105" />
+        </div>
+        <div class="flex justify-between items-start">
+          <div>
+            <h4 class="font-heading text-lg">Diani</h4>
+            <p class="text-sm">Sun, and Soft White Sands</p>
+            <p class="text-sm font-medium mt-1">From Kes 34,500 / person</p>
+          </div>
+          <a href="pages/packages.html"
+             class="bg-tealdeep text-white px-4 py-2 text-xs uppercase tracking-wider rounded hover:bg-tealdeep/90 transition">
+            Book Now
+          </a>
+        </div>
+      </div>
+
+      <!-- ITEM 4 -->
+      <div class="min-w-[280px] group flex flex-col">
+        <div class="h-64 overflow-hidden mb-6">
+          <img src="Assets/home/watamu.webp"
+               class="w-full h-full object-cover transform transition-transform duration-500 ease-out group-hover:scale-105" />
+        </div>
+        <div class="flex justify-between items-start">
+          <div>
+            <h4 class="font-heading text-lg">Watamu</h4>
+            <p class="text-sm">Sun Kissed Beaches and Vibrant corals.</p>
+            <p class="text-sm font-medium mt-1">From Kes 30,000 / person</p>
+          </div>
+          <a href="pages/packages.html"
+             class="bg-tealdeep text-white px-4 py-2 text-xs uppercase tracking-wider rounded hover:bg-tealdeep/90 transition">
+            Book Now
+          </a>
+        </div>
+      </div>
+
+
+      <!-- ITEM 5 -->
+      <div class="min-w-[280px] group flex flex-col">
+        <div class="h-64 overflow-hidden mb-6">
+          <img src="Assets/home/japan.webp"
+               class="w-full h-full object-cover transform transition-transform duration-500 ease-out group-hover:scale-105" />
+        </div>
+        <div class="flex justify-between items-start">
+          <div>
+            <h4 class="font-heading text-lg">Japan</h4>
+            <p class="text-sm">Tradition, Culture, Art.</p>
+            <p class="text-sm font-medium mt-1">From $2,000 / person</p>
+          </div>
+          <a href="pages/packages.html"
+             class="bg-tealdeep text-white px-4 py-2 text-xs uppercase tracking-wider rounded hover:bg-tealdeep/90 transition">
+            Book Now
+          </a>
+        </div>
+      </div>
 
     </div>
   </div>
@@ -717,7 +771,7 @@ Our commitment goes beyond traditional tourism; we are a movement dedicated to t
     </div>
 
     <div class="fade-up text-center">
-      <a href="pages/blog"
+      <a href="pages/blog.html"
          class="inline-block bg-tealdeep hover:bg-[#5D4037] text-white font-heading tracking-widest uppercase text-xs px-10 py-4 transition-colors duration-300">
         Visit Our Blog
       </a>
@@ -742,20 +796,12 @@ Our commitment goes beyond traditional tourism; we are a movement dedicated to t
     </div>
 
     <!-- Navigation -->
-<div class="text-sm space-y-3">
-  <a href="/" class="block hover:text-tealdeep transition">
-    Home
-  </a>
-  <a href="pages/about.html" class="block hover:text-tealdeep transition">
-    About
-  </a>
-  <a href="/pages/packages.html" class="block hover:text-tealdeep transition">
-    Packages
-  </a>
-  <a href="pages/contact.html" class="block hover:text-tealdeep transition">
-    Contact
-  </a>
-</div>
+    <div class="text-sm space-y-3">
+      <p class="hover:text-tealdeep transition cursor-pointer">Home</p>
+      <p class="hover:text-tealdeep transition cursor-pointer">About</p>
+      <p class="hover:text-tealdeep transition cursor-pointer">Packages</p>
+      <p class="hover:text-tealdeep transition cursor-pointer">Contact</p>
+    </div>
 
     <!-- Social + Meta -->
     <div class="space-y-6">
@@ -883,13 +929,6 @@ Our commitment goes beyond traditional tourism; we are a movement dedicated to t
     mobileMenu.classList.toggle('opacity-0');
     mobileMenu.classList.toggle('opacity-100');
   }
-  //Mobile About Toggle Script 
-  const aboutToggle = document.getElementById("mobileAboutToggle");
-  const aboutMenu = document.getElementById("mobileAboutMenu");
-
-  aboutToggle.addEventListener("click", () => {
-    aboutMenu.classList.toggle("hidden");
-  });
 
   // Open/close with hamburger
   menuToggle.addEventListener('click', toggleMenu);
