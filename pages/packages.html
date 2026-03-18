@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Queen Afrique Safaris</title>
-  <link rel="canonical" href="https://queenafriquesafaris.com/pages/packages.html" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,6 +68,26 @@
   animation: scroll 60s linear infinite;
   }
 
+/* The base state: No movement */
+.animate-slideshow {
+  display: flex;
+  width: 100%;
+  transform: translateX(0%);
+  transition: transform 0.5s ease-in-out; /* Smoothly returns to first image on mouse-out */
+}
+
+/* Only trigger the animation when the user hovers over the article */
+.product-item:hover .animate-slideshow {
+  animation: slideshow 9s infinite ease-in-out;
+}
+
+@keyframes slideshow {
+  0%, 25%   { transform: translateX(0%); }      /* Image 1 */
+  35%, 60%  { transform: translateX(-100%); }   /* Image 2 */
+  70%, 95%  { transform: translateX(-200%); }   /* Image 3 */
+  100%      { transform: translateX(0%); }      /* Loop */
+}
+
   /* Google Translate Floating Button */
   #google_translate_element {
   background: white;
@@ -115,104 +134,44 @@
           Queen Afrique Safaris
         </a>
 
-    <!-- Desktop Navigation -->
-    <nav class="hidden md:flex items-center space-x-12 text-sm tracking-wider font-medium text-earthbrown">
 
-      <a href="/" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">
-        Home
-      </a>
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-12 text-sm tracking-wider font-medium text-earthbrown">
+        <a href="/index.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">Home</a>
+        <a href="about.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">About Us</a>
+        <a href="packages.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">Packages</a>
+        <a href="blog.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">Blog</a>
+        <a href="contact.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">Contact</a>
+      </nav>
 
-      <!-- About Dropdown -->
-      <div class="relative group">
-
-        <button class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep group-hover:after:w-full after:transition-all">
-          About
-        </button>
-
-        <div class="absolute top-full left-0 mt-4 w-56 bg-offwhite shadow-lg border border-earthbrown/10
-                    opacity-0 invisible translate-y-2
-                    group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
-                    transition-all duration-300 ease-out z-50">
-
-          <div class="flex flex-col py-4 text-sm tracking-wide text-earthbrown">
-            <a href="about.html" class="px-6 py-2 hover:bg-earthbrown/5 transition">
-              About Us
-            </a>
-            <a href="sports.html" class="px-6 py-2 hover:bg-earthbrown/5 transition">
-              Sports Tourism
-            </a>
-            <a href="#" class="px-6 py-2 hover:bg-earthbrown/5 transition">
-              CSR
-            </a>
-          </div>
-
-        </div>
-      </div>
-
-      <a href="packages.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">
-        Packages
-      </a>
-
-      <a href="blog.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">
-        Blog
-      </a>
-
-      <a href="contact.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">
-        Contact
-      </a>
-
-    </nav>
-
-
-    <!-- CTA + Mobile Toggle -->
-    <div class="flex items-center space-x-6">
-
-      <a href="https://wa.me/254718308032" class="hidden sm:inline-block border border-tealdeep px-6 py-3 text-xs tracking-widest uppercase hover:bg-tealdeep hover:text-white transition">
-        +254 718 308 032
-      </a>
-
-      <button id="menuToggle" class="md:hidden flex flex-col space-y-1.5 group">
-        <span class="w-6 h-px bg-earthbrown group-hover:bg-tealdeep transition"></span>
-        <span class="w-6 h-px bg-earthbrown group-hover:bg-tealdeep transition"></span>
-        <span class="w-6 h-px bg-earthbrown group-hover:bg-tealdeep transition"></span>
-      </button>
-
-    </div>
-    </div>
-
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="fixed top-0 left-0 w-full h-screen bg-offwhite/95 backdrop-blur-md transform -translate-y-full opacity-0 transition-all duration-500 ease-in-out z-40">
-
-      <button id="menuClose" class="absolute top-6 right-6 text-earthbrown text-2xl font-bold hover:text-tealdeep transition">
-        &times;
-      </button>
-
-      <nav class="px-8 py-24 space-y-8 text-lg tracking-widest uppercase text-earthbrown flex flex-col items-center">
-
-        <a href="/" class="hover:text-tealdeep transition">Home</a>
-
-        <!-- Mobile About Dropdown -->
-        <div class="flex flex-col items-center">
-          <button id="mobileAboutToggle" class="hover:text-tealdeep transition">
-            ABOUT
-          </button>
-
-          <div id="mobileAboutMenu" class="hidden flex flex-col mt-4 space-y-4 text-sm tracking-wide normal-case">
-            <a href="about.html" class="hover:text-tealdeep transition">About Us</a>
-            <a href="sports.html" class="hover:text-tealdeep transition">Sports Tourism</a>
-            <a href="#" class="hover:text-tealdeep transition">CSR</a>
-          </div>
-        </div>
-
-        <a href="packages.html" class="hover:text-tealdeep transition">Packages</a>
-        <a href="blog.html" class="hover:text-tealdeep transition">Blog</a>
-        <a href="contact.html" class="hover:text-tealdeep transition">Contact</a>
-
-        <a href="https://wa.me/254718308032" class="mt-6 border border-tealdeep px-6 py-3 text-xs tracking-widest hover:bg-tealdeep hover:text-white transition">
+      <!-- CTA + Mobile Toggle -->
+      <div class="flex items-center space-x-6">
+        <a href="https://wa.me/254718308032" class="hidden sm:inline-block border border-tealdeep px-6 py-3 text-xs tracking-widest uppercase hover:bg-tealdeep hover:text-white transition">
           +254 718 308 032
         </a>
 
+        <!-- Mobile Menu Button -->
+        <button id="menuToggle" class="md:hidden flex flex-col space-y-1.5 group">
+          <span class="w-6 h-px bg-earthbrown group-hover:bg-tealdeep transition"></span>
+          <span class="w-6 h-px bg-earthbrown group-hover:bg-tealdeep transition"></span>
+          <span class="w-6 h-px bg-earthbrown group-hover:bg-tealdeep transition"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed top-0 left-0 w-full h-screen bg-offwhite/95 backdrop-blur-md transform -translate-y-full opacity-0 transition-all duration-500 ease-in-out z-40">
+      
+      <!-- Close button -->
+      <button id="menuClose" class="absolute top-6 right-6 text-earthbrown text-2xl font-bold hover:text-tealdeep transition">&times;</button>
+      
+      <nav class="px-8 py-24 space-y-8 text-lg tracking-widest uppercase text-earthbrown flex flex-col items-center">
+        <a href="/index.html" class="hover:text-tealdeep transition">Home</a>
+        <a href="about.html" class="hover:text-tealdeep transition">About Us</a>
+        <a href="packages.html" class="hover:text-tealdeep transition">Packages</a>
+        <a href="blog.html" class="hover:text-tealdeep transition">Blog</a>
+        <a href="contact.html" class="hover:text-tealdeep transition">Contact</a>
+        <a href="https://wa.me/254718308032" class="mt-6 border border-tealdeep px-6 py-3 text-xs tracking-widest hover:bg-tealdeep hover:text-white transition">+254 718 308 032</a>
       </nav>
     </div>
   </header>
@@ -229,8 +188,9 @@
           Destinations & Experiences
         </h1>
         <p class="max-w-xl text-earthbrown/80 fade-up">
-          Thoughtfully composed journeys across Africa - each experience
-          designed with care, rhythm, and purpose.
+          Beyond these featured horizons, we curate bespoke, world-class journeys tailored to 
+          your rhythm. While our heart is in Africa, our expertise is global. 
+          Contact us to design your unique escape to any destination, anywhere in the world.
         </p>
       </div>
 
@@ -265,15 +225,205 @@
 
       <!-- Item -->
       <article class="product-item group">
-        <div class="mb-6 overflow-hidden">
-          <img
-            src="../Assets/elephant1.jpg"
-            alt="Maasai Mara Safari"
-            class="w-full h-64 object-cover
-                   group-hover:scale-105 transition duration-700"
-          />
+      <div class="mb-6 overflow-hidden relative h-64"> <div class="flex w-full h-full animate-slideshow">
+            <img src="../Assets/Locations/Global/Greece/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Global/Greece/photo_2.webp" alt="Maasai Mara 2" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Global/Greece/photo_3.webp" alt="Maasai Mara 3" class="w-full h-full object-cover flex-shrink-0" />
         </div>
+        </div>
+        <h3 class="font-heading text-2xl mb-2">
+          Greece | Sun-Drenched Odyssey
+        </h3>
 
+        <p class="text-sm text-earthbrown/70 mb-4">
+          From USD 2,205 · Global · Vacation Package · 5 Days / 4 Nights (Min)
+        </p>
+
+        <p class="text-sm leading-relaxed text-earthbrown/90 mb-6">
+          Walk through ancient history and into the deep blue Aegean sea.
+        </p>
+
+        <a
+          href="https://wa.me/254718308032"
+          target="_blank"
+          class="inline-block text-xs tracking-widest uppercase
+                 border-b border-tealdeep pb-1
+                 hover:text-tealdeep transition"
+        >
+          Learn More →
+        </a>
+      </article>
+
+      <!-- Item -->
+      <article class="product-item group">
+      <div class="mb-6 overflow-hidden relative h-64"> <div class="flex w-full h-full animate-slideshow">
+            <img src="../Assets/Locations/Global/Japan/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Global/Japan/photo_2.webp" alt="Maasai Mara 2" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Global/Japan/photo_3.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+        </div>
+        </div>
+        <h3 class="font-heading text-2xl mb-2">
+          Japan | Eternal Tradition Meets Modern Marvels
+        </h3>
+
+        <p class="text-sm text-earthbrown/70 mb-4">
+          Global · Leisure ·5 Days / 4 Nights
+        </p>
+
+        <p class="text-sm leading-relaxed text-earthbrown/90 mb-6">
+          Discover a land where ancient shrines and bullet trains coexist in harmony.
+        </p>
+
+        <a
+          href="https://wa.me/254718308032"
+          target="_blank"
+          class="inline-block text-xs tracking-widest uppercase
+                 border-b border-tealdeep pb-1
+                 hover:text-tealdeep transition"
+        >
+          Learn More →
+        </a>
+      </article>
+
+
+      <!-- Item -->
+      <article class="product-item group">
+      <div class="mb-6 overflow-hidden relative h-64"> <div class="flex w-full h-full animate-slideshow">
+            <img src="../Assets/Locations/Global/Malaysia/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Global/Malaysia/photo_2.webp" alt="Maasai Mara 2" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Global/Malaysia/photo_3.webp" alt="Maasai Mara 3" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Global/Malaysia/photo_4.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+        </div>
+        </div>
+        <h3 class="font-heading text-2xl mb-2">
+          Malaysia | Easter City Escape
+        </h3>
+
+        <p class="text-sm text-earthbrown/70 mb-4">
+          From $1955 · Global · City Tour & Theme Park · 5 Days / 4 Nights
+        </p>
+
+        <p class="text-sm leading-relaxed text-earthbrown/90 mb-6">
+            Explore vibrant cities and iconic towers on a perfect holiday getaway.
+        </p>
+
+        <a
+          href="https://wa.me/254718308032"
+          target="_blank"
+          class="inline-block text-xs tracking-widest uppercase
+                 border-b border-tealdeep pb-1
+                 hover:text-tealdeep transition"
+        >
+          Learn More →
+        </a>
+      </article>
+
+
+      <!-- Item -->
+      <article class="product-item group">
+      <div class="mb-6 overflow-hidden relative h-64"> <div class="flex w-full h-full animate-slideshow">
+            <img src="../Assets/Locations/Kenya/Amboseli/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Amboseli/photo_2.webp" alt="Maasai Mara 2" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Amboseli/photo_3.webp" alt="Maasai Mara 3" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Amboseli/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+        </div>
+        </div>
+        <h3 class="font-heading text-2xl mb-2">
+          Amboseli | The Land of Giants
+        </h3>
+
+        <p class="text-sm text-earthbrown/70 mb-4">
+          From KES 29,500/= · Kenya · Safari · 3 Days / 2 Nights (Apr 2026)
+        </p>
+
+        <p class="text-sm leading-relaxed text-earthbrown/90 mb-6">
+            Witness mighty herds beneath Kilimanjaro's snowy peak..
+        </p>
+
+        <a
+          href="https://wa.me/254718308032"
+          target="_blank"
+          class="inline-block text-xs tracking-widest uppercase
+                 border-b border-tealdeep pb-1
+                 hover:text-tealdeep transition"
+        >
+          Learn More →
+        </a>
+      </article>
+
+      <!-- Item -->
+      <article class="product-item group">
+      <div class="mb-6 overflow-hidden relative h-64"> <div class="flex w-full h-full animate-slideshow">
+            <img src="../Assets/Locations/Kenya/Diani/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Diani/photo_2.webp" alt="Maasai Mara 2" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Diani/photo_3.webp" alt="Maasai Mara 3" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Diani/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+        </div>
+        </div>
+        <h3 class="font-heading text-2xl mb-2">
+          DIANI | Easter Beach Retreat
+        </h3>
+
+        <p class="text-sm text-earthbrown/70 mb-4">
+          From KES 34,500 · Kenya · SGR Holiday · 4 Days / 3 Nights
+        </p>
+
+        <p class="text-sm leading-relaxed text-earthbrown/90 mb-6">
+          Walk on soft white sands while the Indian Ocean whispers.
+        </p>
+
+        <a
+          href="https://wa.me/254718308032"
+          target="_blank"
+          class="inline-block text-xs tracking-widest uppercase
+                 border-b border-tealdeep pb-1
+                 hover:text-tealdeep transition"
+        >
+          Learn More →
+        </a>
+      </article>
+
+      <!-- Item -->
+      <article class="product-item group">
+      <div class="mb-6 overflow-hidden relative h-64"> <div class="flex w-full h-full animate-slideshow">
+            <img src="../Assets/Locations/Kenya/Malindi and Watamu/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Malindi and Watamu/photo_2.webp" alt="Maasai Mara 2" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Malindi and Watamu/photo_3.webp" alt="Maasai Mara 3" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Malindi and Watamu/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+        </div>
+        </div>
+        <h3 class="font-heading text-2xl mb-2">
+          Malindi / Watamu | Easter Getaway
+        </h3>
+
+        <p class="text-sm text-earthbrown/70 mb-4">
+          From KES 29,700/= · Kenya · Coast Beach · 4 Days / Easter 2026
+        </p>
+
+        <p class="text-sm leading-relaxed text-earthbrown/90 mb-6">
+          Sun-kissed beaches and vibrant coral reefs await.
+        </p>
+
+        <a
+          href="https://wa.me/254718308032"
+          target="_blank"
+          class="inline-block text-xs tracking-widest uppercase
+                 border-b border-tealdeep pb-1
+                 hover:text-tealdeep transition"
+        >
+          Learn More →
+        </a>
+      </article>
+
+      <!-- Item -->
+      <article class="product-item group">
+      <div class="mb-6 overflow-hidden relative h-64"> <div class="flex w-full h-full animate-slideshow">
+            <img src="../Assets/Locations/Kenya/Masai Mara/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Masai Mara/photo_2.webp" alt="Maasai Mara 2" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Masai Mara/photo_3.webp" alt="Maasai Mara 3" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Masai Mara/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+        </div>
+        </div>
         <h3 class="font-heading text-2xl mb-2">
           Maasai Mara | Classic Safari
         </h3>
@@ -300,25 +450,23 @@
 
       <!-- Item -->
       <article class="product-item group">
-        <div class="mb-6 overflow-hidden">
-          <img
-            src="../Assets/elephant1.jpg"
-            alt="Serengeti Migration"
-            class="w-full h-64 object-cover
-                   group-hover:scale-105 transition duration-700"
-          />
+      <div class="mb-6 overflow-hidden relative h-64"> <div class="flex w-full h-full animate-slideshow">
+            <img src="../Assets/Locations/Kenya/Mombasa/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Mombasa/photo_2.webp" alt="Maasai Mara 2" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Mombasa/photo_3.webp" alt="Maasai Mara 3" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Mombasa/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
         </div>
-
+        </div>
         <h3 class="font-heading text-2xl mb-2">
-          Serengeti | The Great Migration
+          Mombasa | Easter Coastal Getaway
         </h3>
 
         <p class="text-sm text-earthbrown/70 mb-4">
-          Tanzania · Wildlife · Seasonal
+          From KES 43,000 · Kenya · SGR Holiday · 4 Days
         </p>
 
         <p class="text-sm leading-relaxed text-earthbrown/90 mb-6">
-          Follow ancient paths carved by hooves across endless horizons.
+          Sun-soaked shores and Swahili charm await you by the turquoise sea.
         </p>
 
         <a
@@ -332,7 +480,231 @@
         </a>
       </article>
 
-      <!-- Repeat for ~35 items -->
+      <!-- Item -->
+      <article class="product-item group">
+      <div class="mb-6 overflow-hidden relative h-64"> <div class="flex w-full h-full animate-slideshow">
+            <img src="../Assets/Locations/Kenya/Mt Kenya/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Mt Kenya/photo_2.webp" alt="Maasai Mara 2" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Mt Kenya/photo_3.webp" alt="Maasai Mara 3" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Mt Kenya/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+        </div>
+        </div>
+        <h3 class="font-heading text-2xl mb-2">
+          Mt Kenya | Mountain Majesty Awaits
+        </h3>
+
+        <p class="text-sm text-earthbrown/70 mb-4">
+          Kenya · Wildlife · From 41,000/=
+        </p>
+
+        <p class="text-sm leading-relaxed text-earthbrown/90 mb-6">
+          Unwind where the peaks touch the sky.
+        </p>
+
+        <a
+          href="https://wa.me/254718308032"
+          target="_blank"
+          class="inline-block text-xs tracking-widest uppercase
+                 border-b border-tealdeep pb-1
+                 hover:text-tealdeep transition"
+        >
+          Learn More →
+        </a>
+      </article>
+
+      <!-- Item -->
+      <article class="product-item group">
+      <div class="mb-6 overflow-hidden relative h-64"> <div class="flex w-full h-full animate-slideshow">
+            <img src="../Assets/Locations/Kenya/Nairobi/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Nairobi/photo_2.webp" alt="Maasai Mara 2" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Nairobi/photo_3.webp" alt="Maasai Mara 3" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Nairobi/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+        </div>
+        </div>
+        <h3 class="font-heading text-2xl mb-2">
+          NAIROBI | Wildlife Meets City
+        </h3>
+
+        <p class="text-sm text-earthbrown/70 mb-4">
+          From $835 · Kenya · Group Tours Allowed
+        </p>
+
+        <p class="text-sm leading-relaxed text-earthbrown/90 mb-6">
+          Embark on a unique journey where giraffes roam freely amidst urban life.
+        </p>
+
+        <a
+          href="https://wa.me/254718308032"
+          target="_blank"
+          class="inline-block text-xs tracking-widest uppercase
+                 border-b border-tealdeep pb-1
+                 hover:text-tealdeep transition"
+        >
+          Learn More →
+        </a>
+      </article>
+
+      <!-- Item -->
+      <article class="product-item group">
+      <div class="mb-6 overflow-hidden relative h-64"> <div class="flex w-full h-full animate-slideshow">
+            <img src="../Assets/Locations/Kenya/Samburu/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Samburu/photo_2.webp" alt="Maasai Mara 2" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Samburu/photo_3.webp" alt="Maasai Mara 3" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Samburu/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+        </div>
+        </div>
+        <h3 class="font-heading text-2xl mb-2">
+          SAMBURU | Untamed Africa Awaits
+        </h3>
+
+        <p class="text-sm text-earthbrown/70 mb-4">
+          From KES 32,845/= · Kenya · Safari
+        </p>
+
+        <p class="text-sm leading-relaxed text-earthbrown/90 mb-6">
+          Witness ancient cultures and diverse wildlife under the vast Kenyan sky.
+        </p>
+
+        <a
+          href="https://wa.me/254718308032"
+          target="_blank"
+          class="inline-block text-xs tracking-widest uppercase
+                 border-b border-tealdeep pb-1
+                 hover:text-tealdeep transition"
+        >
+          Learn More →
+        </a>
+      </article>
+
+      <!-- Item -->
+      <article class="product-item group">
+      <div class="mb-6 overflow-hidden relative h-64"> <div class="flex w-full h-full animate-slideshow">
+            <img src="../Assets/Locations/Kenya/Tsavo/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Tsavo/photo_2.webp" alt="Maasai Mara 2" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Tsavo/photo_3.webp" alt="Maasai Mara 3" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Kenya/Tsavo/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+        </div>
+        </div>
+        <h3 class="font-heading text-2xl mb-2">
+          Tsavo | Exciting Elephant Experience
+        </h3>
+
+        <p class="text-sm text-earthbrown/70 mb-4">
+          From KES 41,700 /= · Kenya · Full Board Safari · 3 Days / 2 Nights
+        </p>
+
+        <p class="text-sm leading-relaxed text-earthbrown/90 mb-6">
+          Unlock the wilderness where giant tuskers roam red-earth landscapes.
+        </p>
+
+        <a
+          href="https://wa.me/254718308032"
+          target="_blank"
+          class="inline-block text-xs tracking-widest uppercase
+                 border-b border-tealdeep pb-1
+                 hover:text-tealdeep transition"
+        >
+          Learn More →
+        </a>
+      </article>
+
+      <!-- Item -->
+      <article class="product-item group">
+      <div class="mb-6 overflow-hidden relative h-64"> <div class="flex w-full h-full animate-slideshow">
+            <img src="../Assets/Locations/Regional/Rwanda/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Regional/Rwanda/photo_2.webp" alt="Maasai Mara 2" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Regional/Rwanda/photo_3.webp" alt="Maasai Mara 3" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Regional/Rwanda/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+        </div>
+        </div>
+        <h3 class="font-heading text-2xl mb-2">
+          Rwanda (Regional) | Fun and Adventure
+        </h3>
+
+        <p class="text-sm text-earthbrown/70 mb-4">
+          From 72,800/= · Regional · Tour
+        </p>
+
+        <p class="text-sm leading-relaxed text-earthbrown/90 mb-6">
+          Walk among the trees and uncover vibrant culture in the heart of Africa.
+        </p>
+
+        <a
+          href="https://wa.me/254718308032"
+          target="_blank"
+          class="inline-block text-xs tracking-widest uppercase
+                 border-b border-tealdeep pb-1
+                 hover:text-tealdeep transition"
+        >
+          Learn More →
+        </a>
+      </article>
+
+
+      <!-- Item -->
+      <article class="product-item group">
+      <div class="mb-6 overflow-hidden relative h-64"> <div class="flex w-full h-full animate-slideshow">
+            <img src="../Assets/Locations/Regional/South Africa/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Regional/South Africa/photo_2.webp" alt="Maasai Mara 2" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Regional/South Africa/photo_3.webp" alt="Maasai Mara 3" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Regional/South Africa/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+        </div>
+        </div>
+        <h3 class="font-heading text-2xl mb-2">
+          Cape Town | Unforgettable Easter Getaway
+        </h3>
+
+        <p class="text-sm text-earthbrown/70 mb-4">
+          From $1955 · Regional · Flights & Hotels
+        </p>
+
+        <p class="text-sm leading-relaxed text-earthbrown/90 mb-6">
+          Where majesty meets the shore in a vibrant dance of nature.
+        </p>
+
+        <a
+          href="https://wa.me/254718308032"
+          target="_blank"
+          class="inline-block text-xs tracking-widest uppercase
+                 border-b border-tealdeep pb-1
+                 hover:text-tealdeep transition"
+        >
+          Learn More →
+        </a>
+      </article>
+
+
+      <!-- Item -->
+      <article class="product-item group">
+      <div class="mb-6 overflow-hidden relative h-64"> <div class="flex w-full h-full animate-slideshow">
+            <img src="../Assets/Locations/Regional/Tanzania/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Regional/Tanzania/photo_2.webp" alt="Maasai Mara 2" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Regional/Tanzania/photo_3.webp" alt="Maasai Mara 3" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/Regional/Tanzania/photo_1.webp" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+        </div>
+        </div>
+        <h3 class="font-heading text-2xl mb-2">
+          Kilimanjaro and Moshi Excursions 
+        </h3>
+
+        <p class="text-sm text-earthbrown/70 mb-4">
+          From 23,999/= · Regional · Marathons, Hikes & Nature Tour
+        </p>
+
+        <p class="text-sm leading-relaxed text-earthbrown/90 mb-6">
+          Challenge yourself where the savannah meets the snow-capped peak.
+        </p>
+
+        <a
+          href="https://wa.me/254718308032"
+          target="_blank"
+          class="inline-block text-xs tracking-widest uppercase
+                 border-b border-tealdeep pb-1
+                 hover:text-tealdeep transition"
+        >
+          Learn More →
+        </a>
+      </article>
 
     </div>
   </div>
@@ -354,18 +726,10 @@
 
     <!-- Navigation -->
     <div class="text-sm space-y-3">
-    <a href="/" class="block hover:text-tealdeep transition">
-        Home
-    </a>
-    <a href="about.html" class="block hover:text-tealdeep transition">
-        About
-    </a>
-    <a href="packages.html" class="block hover:text-tealdeep transition">
-        Packages
-    </a>
-    <a href="contact.html" class="block hover:text-tealdeep transition">
-        Contact
-    </a>
+      <p class="hover:text-tealdeep transition cursor-pointer">Home</p>
+      <p class="hover:text-tealdeep transition cursor-pointer">About</p>
+      <p class="hover:text-tealdeep transition cursor-pointer">Packages</p>
+      <p class="hover:text-tealdeep transition cursor-pointer">Contact</p>
     </div>
 
     <!-- Social + Meta -->
@@ -494,14 +858,6 @@
     mobileMenu.classList.toggle('opacity-0');
     mobileMenu.classList.toggle('opacity-100');
   }
-
-    //Mobile About Toggle Script 
-  const aboutToggle = document.getElementById("mobileAboutToggle");
-  const aboutMenu = document.getElementById("mobileAboutMenu");
-
-  aboutToggle.addEventListener("click", () => {
-    aboutMenu.classList.toggle("hidden");
-  });
 
   // Open/close with hamburger
   menuToggle.addEventListener('click', toggleMenu);
