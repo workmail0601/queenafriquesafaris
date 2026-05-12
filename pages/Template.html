@@ -4,7 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Queen Afrique Safaris</title>
-  <link rel="canonical" href="https://queenafriquesafaris.com/pages/template.html" />
+  <link rel="canonical" href="https://queenafriquesafaris.com/" />
+  <meta name="description" content="Queen Afrique Safaris – curated African safari and travel experiences. Explore wildlife, culture and adventure across Africa." />
+  <meta property="og:title" content="Queen Afrique Safaris" />
+  <meta property="og:description" content="Curated African travel experiences – safaris, wildlife, culture and adventure." />
+  <meta property="og:url" content="https://queenafriquesafaris.com/" />
+  <meta property="og:type" content="website" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -115,104 +120,44 @@
           Queen Afrique Safaris
         </a>
 
-    <!-- Desktop Navigation -->
-    <nav class="hidden md:flex items-center space-x-12 text-sm tracking-wider font-medium text-earthbrown">
 
-      <a href="/" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">
-        Home
-      </a>
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-12 text-sm tracking-wider font-medium text-earthbrown">
+        <a href="/index.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">Home</a>
+        <a href="about.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">About Us</a>
+        <a href="packages.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">Packages</a>
+        <a href="blog.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">Blog</a>
+        <a href="contact.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">Contact</a>
+      </nav>
 
-      <!-- About Dropdown -->
-      <div class="relative group">
-
-        <button class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep group-hover:after:w-full after:transition-all">
-          About
-        </button>
-
-        <div class="absolute top-full left-0 mt-4 w-56 bg-offwhite shadow-lg border border-earthbrown/10
-                    opacity-0 invisible translate-y-2
-                    group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
-                    transition-all duration-300 ease-out z-50">
-
-          <div class="flex flex-col py-4 text-sm tracking-wide text-earthbrown">
-            <a href="about.html" class="px-6 py-2 hover:bg-earthbrown/5 transition">
-              About Us
-            </a>
-            <a href="sports.html" class="px-6 py-2 hover:bg-earthbrown/5 transition">
-              Sports Tourism
-            </a>
-            <a href="#" class="px-6 py-2 hover:bg-earthbrown/5 transition">
-              CSR
-            </a>
-          </div>
-
-        </div>
-      </div>
-
-      <a href="packages.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">
-        Packages
-      </a>
-
-      <a href="blog.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">
-        Blog
-      </a>
-
-      <a href="contact.html" class="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-tealdeep hover:after:w-full after:transition-all">
-        Contact
-      </a>
-
-    </nav>
-
-
-    <!-- CTA + Mobile Toggle -->
-    <div class="flex items-center space-x-6">
-
-      <a href="https://wa.me/254718308032" class="hidden sm:inline-block border border-tealdeep px-6 py-3 text-xs tracking-widest uppercase hover:bg-tealdeep hover:text-white transition">
-        +254 718 308 032
-      </a>
-
-      <button id="menuToggle" class="md:hidden flex flex-col space-y-1.5 group">
-        <span class="w-6 h-px bg-earthbrown group-hover:bg-tealdeep transition"></span>
-        <span class="w-6 h-px bg-earthbrown group-hover:bg-tealdeep transition"></span>
-        <span class="w-6 h-px bg-earthbrown group-hover:bg-tealdeep transition"></span>
-      </button>
-
-    </div>
-    </div>
-
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="fixed top-0 left-0 w-full h-screen bg-offwhite/95 backdrop-blur-md transform -translate-y-full opacity-0 transition-all duration-500 ease-in-out z-40">
-
-      <button id="menuClose" class="absolute top-6 right-6 text-earthbrown text-2xl font-bold hover:text-tealdeep transition">
-        &times;
-      </button>
-
-      <nav class="px-8 py-24 space-y-8 text-lg tracking-widest uppercase text-earthbrown flex flex-col items-center">
-
-        <a href="/" class="hover:text-tealdeep transition">Home</a>
-
-        <!-- Mobile About Dropdown -->
-        <div class="flex flex-col items-center">
-          <button id="mobileAboutToggle" class="hover:text-tealdeep transition">
-            ABOUT
-          </button>
-
-          <div id="mobileAboutMenu" class="hidden flex flex-col mt-4 space-y-4 text-sm tracking-wide normal-case">
-            <a href="about.html" class="hover:text-tealdeep transition">About Us</a>
-            <a href="sports.html" class="hover:text-tealdeep transition">Sports Tourism</a>
-            <a href="#" class="hover:text-tealdeep transition">CSR</a>
-          </div>
-        </div>
-
-        <a href="packages.html" class="hover:text-tealdeep transition">Packages</a>
-        <a href="blog.html" class="hover:text-tealdeep transition">Blog</a>
-        <a href="contact.html" class="hover:text-tealdeep transition">Contact</a>
-
-        <a href="https://wa.me/254718308032" class="mt-6 border border-tealdeep px-6 py-3 text-xs tracking-widest hover:bg-tealdeep hover:text-white transition">
+      <!-- CTA + Mobile Toggle -->
+      <div class="flex items-center space-x-6">
+        <a href="https://wa.me/254718308032" class="hidden sm:inline-block border border-tealdeep px-6 py-3 text-xs tracking-widest uppercase hover:bg-tealdeep hover:text-white transition">
           +254 718 308 032
         </a>
 
+        <!-- Mobile Menu Button -->
+        <button id="menuToggle" class="md:hidden flex flex-col space-y-1.5 group">
+          <span class="w-6 h-px bg-earthbrown group-hover:bg-tealdeep transition"></span>
+          <span class="w-6 h-px bg-earthbrown group-hover:bg-tealdeep transition"></span>
+          <span class="w-6 h-px bg-earthbrown group-hover:bg-tealdeep transition"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed top-0 left-0 w-full h-screen bg-offwhite/95 backdrop-blur-md transform -translate-y-full opacity-0 transition-all duration-500 ease-in-out z-40">
+      
+      <!-- Close button -->
+      <button id="menuClose" class="absolute top-6 right-6 text-earthbrown text-2xl font-bold hover:text-tealdeep transition">&times;</button>
+      
+      <nav class="px-8 py-24 space-y-8 text-lg tracking-widest uppercase text-earthbrown flex flex-col items-center">
+        <a href="/index.html" class="hover:text-tealdeep transition">Home</a>
+        <a href="about.html" class="hover:text-tealdeep transition">About Us</a>
+        <a href="packages.html" class="hover:text-tealdeep transition">Packages</a>
+        <a href="blog.html" class="hover:text-tealdeep transition">Blog</a>
+        <a href="contact.html" class="hover:text-tealdeep transition">Contact</a>
+        <a href="https://wa.me/254718308032" class="mt-6 border border-tealdeep px-6 py-3 text-xs tracking-widest hover:bg-tealdeep hover:text-white transition">+254 718 308 032</a>
       </nav>
     </div>
   </header>
@@ -233,18 +178,10 @@
 
     <!-- Navigation -->
     <div class="text-sm space-y-3">
-    <a href="/" class="block hover:text-tealdeep transition">
-        Home
-    </a>
-    <a href="about.html" class="block hover:text-tealdeep transition">
-        About
-    </a>
-    <a href="packages.html" class="block hover:text-tealdeep transition">
-        Packages
-    </a>
-    <a href="contact.html" class="block hover:text-tealdeep transition">
-        Contact
-    </a>
+      <p class="hover:text-tealdeep transition cursor-pointer">Home</p>
+      <p class="hover:text-tealdeep transition cursor-pointer">About</p>
+      <p class="hover:text-tealdeep transition cursor-pointer">Packages</p>
+      <p class="hover:text-tealdeep transition cursor-pointer">Contact</p>
     </div>
 
     <!-- Social + Meta -->
@@ -374,14 +311,6 @@
     mobileMenu.classList.toggle('opacity-100');
   }
 
-  //Mobile About Toggle Script 
-  const aboutToggle = document.getElementById("mobileAboutToggle");
-  const aboutMenu = document.getElementById("mobileAboutMenu");
-
-  aboutToggle.addEventListener("click", () => {
-    aboutMenu.classList.toggle("hidden");
-  });
-
   // Open/close with hamburger
   menuToggle.addEventListener('click', toggleMenu);
 
@@ -411,3 +340,47 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- Item -->
+      <article class="product-item group">
+      <div class="mb-6 overflow-hidden relative h-64"> <div class="flex w-full h-full animate-slideshow">
+            <img src="../Assets/Locations/" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/" alt="Maasai Mara 2" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/" alt="Maasai Mara 3" class="w-full h-full object-cover flex-shrink-0" />
+            <img src="../Assets/Locations/" alt="Maasai Mara 1" class="w-full h-full object-cover flex-shrink-0" />
+        </div>
+        </div>
+        <h3 class="font-heading text-2xl mb-2">
+          Maasai Mara | Classic Safari
+        </h3>
+
+        <p class="text-sm text-earthbrown/70 mb-4">
+          Kenya · Wildlife · 5–7 Days
+        </p>
+
+        <p class="text-sm leading-relaxed text-earthbrown/90 mb-6">
+          Endless savannahs, dramatic migrations, and close encounters
+          with Africa’s most iconic wildlife.
+        </p>
+
+        <a
+          href="https://wa.me/254718308032"
+          target="_blank"
+          class="inline-block text-xs tracking-widest uppercase
+                 border-b border-tealdeep pb-1
+                 hover:text-tealdeep transition"
+        >
+          Learn More →
+        </a>
+      </article>
